@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/showcase"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/ShowcaseDialog"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingTop="64dp"
+    android:paddingBottom="64dp"
+    tools:background="#AA000000">
+
+    <LinearLayout
+        style="@style/ShowcaseDialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_marginStart="16dp"
+            android:id="@+id/showcaseArrowUp"
+            android:layout_width="37dp"
+            android:layout_height="46dp"
+            android:rotation="-20"
+            android:scaleType="fitXY"
+            android:scaleY="-1"
+            app:srcCompat="@drawable/ic_arrow_down" />
+
+        <TextView
+            android:id="@+id/showcaseTitle"
+            style="@style/ShowcaseDialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/showcase_title"
+            tools:style="@style/ShowcaseDialog" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_centerHorizontal="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/showcaseNavigation"
+            style="@style/ShowcaseDialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/showcase_navigation"
+            tools:style="@style/ShowcaseDialog" />
+
+
+        <ImageView
+            android:layout_marginStart="6dp"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/showcaseArrowDown"
+            android:layout_width="37dp"
+            android:layout_height="46dp"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/ic_arrow_down"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

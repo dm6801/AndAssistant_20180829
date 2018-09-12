@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="@string/settings_misc_label">
+
+        <CheckBoxPreference
+            android:key="@string/pref_showcase_setting"
+            android:summary="@string/settings_showcase_description"
+            android:title="@string/settings_showcase" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

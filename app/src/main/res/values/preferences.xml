@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pref_filename_suffix">_preferences</string>
+    <string name="pref_showcase_setting">showcase_setting</string>
+    <string name="pref_showcase_suffix">_watched</string>
+</resources>

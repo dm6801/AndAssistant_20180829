@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">AndAssistant</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_settings">Settings</string>
+    <string name="nav_home">Home</string>
+    <string name="nav_dashboard">Dashboard</string>
+    <string name="nav_settings">Settings</string>
+    <string name="login_email_hint">e-mail</string>
+    <string name="login_password_hint">password</string>
+    <string name="login_repeat_password_hint">password</string>
+    <string name="login_activity_title">Login</string>
+    <string name="login_activity_register_title">Register</string>
+    <string name="login_button_login">Login</string>
+    <string name="login_button_register">Register</string>
+    <string name="login_exception_email_field_empty">e-mail can not be empty</string>
+    <string name="login_exception_password_field_empty">password can not be empty</string>
+    <string name="login_exception_password_mismatch">password must be repeated correctly</string>
+    <string name="login_exception_general">something is wrong</string>
+    <string name="login_failure">login failure</string>
+    <string name="login_register_failure">register failure</string>
+    <string name="login_register_success">registered successfully</string>
+    <string name="login_exception_email_invalid">e-mail is invalid</string>
+    <string name="login_exception_password_invalid">password contains non-allowed characters. use english alphanumerics + special characters</string>
+    <string name="home_greeting">Welcome back %1$s\n\t\tI\'ve been expecting you..</string>
+    <string name="showcase_title">you are here</string>
+    <string name="showcase_navigation">navigate between different screens</string>
+    <string name="settings_misc_label">Miscellaneous</string>
+    <string name="settings_showcase">Showcase</string>
+    <string name="settings_showcase_description">display usage guide</string>
+    <string name="title_notes">Notes</string>
+    <string name="showcase_dashboard_notes">show notes</string>
+    <string name="editnote_enter_note_hint">Enter note</string>
+    <string name="title_edit_note">Edit</string>
+</resources>
