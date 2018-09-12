@@ -9,13 +9,29 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         tools:context=".home.HomeActivity">
 
-        <EditText
-            android:id="@+id/noteText"
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="@dimen/editnote_text_margin"
-            android:hint="@string/editnote_enter_note_hint"
-            android:inputType="textMultiLine|textCapSentences" />
+            android:layout_height="match_parent">
+
+            <EditText
+                android:id="@+id/noteTitle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/editnote_text_margin"
+                android:hint="@string/editnote_title_hint"
+                android:lines="1"
+                android:maxLength="100"
+                android:inputType="textCapSentences" />
+
+            <EditText
+                android:id="@+id/noteText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/editnote_text_margin"
+                android:hint="@string/editnote_text_hint"
+                android:inputType="textMultiLine|textCapSentences" />
+        </LinearLayout>
 
     </android.support.v4.widget.NestedScrollView>
 </layout>

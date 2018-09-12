@@ -25,7 +25,7 @@ public class EditNoteFragment extends BaseFragment {
     NoteApi repository;
 
     FragmentEditNoteBinding binding;
-    private Note note;
+    Note note;
 
     @Override
     protected int getLayoutResId() {
@@ -58,6 +58,7 @@ public class EditNoteFragment extends BaseFragment {
             int noteId = getArguments().getInt(NotesFragment.KEY_NOTE_ID, -1);
             note = repository.findItemById(noteId);
 
+            binding.noteTitle.setText(note.getTitle());
             binding.noteText.setText(note.getText());
         }
     }
@@ -69,12 +70,14 @@ public class EditNoteFragment extends BaseFragment {
     }
 
     private void saveNote() {
+        String noteTitle = binding.noteTitle.getText().toString();
         String noteText = binding.noteText.getText().toString();
 
-        if (noteText.trim().isEmpty()) {
+        if (noteTitle.trim().isEmpty() || noteText.trim().isEmpty()) {
             return;
         }
 
+        note.setTitle(noteTitle);
         note.setDate(new Date());
         note.setText(noteText);
         repository.updateItem(note);

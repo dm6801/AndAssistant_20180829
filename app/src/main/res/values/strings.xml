@@ -30,6 +30,7 @@
     <string name="settings_showcase_description">display usage guide</string>
     <string name="title_notes">Notes</string>
     <string name="showcase_dashboard_notes">show notes</string>
-    <string name="editnote_enter_note_hint">Enter note</string>
+    <string name="editnote_text_hint">Enter note</string>
     <string name="title_edit_note">Edit</string>
+    <string name="editnote_title_hint">Enter title</string>
 </resources>
