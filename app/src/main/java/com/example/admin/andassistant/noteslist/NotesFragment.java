@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.View;
 
 import com.example.admin.andassistant.R;
@@ -58,7 +60,23 @@ public class NotesFragment extends BaseFragment {
 
     private void initRecyclerView() {
         binding.notesRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        binding.notesRecyclerView.setAdapter(new NotesAdapter(repository.getAll()));
+        NotesAdapter notesAdapter = new NotesAdapter(repository.getAll());
+        binding.notesRecyclerView.setAdapter(notesAdapter);
+
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT) {
+            @Override
+            public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+                return false;
+            }
+
+            @Override
+            public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+                int noteId = ((NotesAdapter.NoteViewHolder) viewHolder).noteId;
+                repository.deleteItem(repository.findItemById(noteId));
+                notesAdapter.notifyDataSetChanged();
+            }
+        });
+        itemTouchHelper.attachToRecyclerView(binding.notesRecyclerView);
     }
 
     private void initFloatingActionButton() {

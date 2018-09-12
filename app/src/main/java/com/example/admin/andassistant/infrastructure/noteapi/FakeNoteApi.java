@@ -20,7 +20,7 @@ public class FakeNoteApi implements NoteApi {
             " laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit" +
             " in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat" +
             " cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
-    public static final int NEW_NOTE_ID = 0;
+    public static final int NEW_NOTE_ID = -1;
 
     public static final String EMPTY_FIELD = "";
 
@@ -55,23 +55,32 @@ public class FakeNoteApi implements NoteApi {
             }
         }
 
-        return emptyItem();
+        return newItem();
     }
 
     @Override
     public void updateItem(Note note) {
-        if (isNewNote(note)) {
-            int lastId = notes.get(notes.size() - 1).getId();
-            note.setId(lastId + 1);
-            notes.add(note);
+        if (!isNewNote(note)) {
+            return;
         }
+
+        int lastId = -1;
+
+        if (notes.size() > 0) {
+            lastId = notes.get(notes.size() - 1).getId();
+        }
+
+        note.setId(lastId + 1);
+        notes.add(note);
+    }
+
+    @Override
+    public void deleteItem(Note note) {
+        notes.remove(note);
     }
 
     private boolean isNewNote(Note note) {
         return note.getId() == NEW_NOTE_ID;
     }
 
-    private Note emptyItem() {
-        return new Note();
-    }
 }

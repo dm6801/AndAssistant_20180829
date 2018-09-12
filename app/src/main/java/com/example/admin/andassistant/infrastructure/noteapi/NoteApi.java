@@ -12,4 +12,6 @@ public interface NoteApi {
     Note findItemById(int id);
 
     void updateItem(Note note);
+
+    void deleteItem(Note note);
 }

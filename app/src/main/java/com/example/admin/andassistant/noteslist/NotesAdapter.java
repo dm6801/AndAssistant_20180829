@@ -60,6 +60,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NoteViewHold
 
     static class NoteViewHolder extends RecyclerView.ViewHolder {
         protected ListItemNoteBinding binding;
+        public int noteId;
 
         public NoteViewHolder(ListItemNoteBinding binding) {
             super(binding.getRoot());
@@ -67,6 +68,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NoteViewHold
         }
 
         void bind(Note note, Context context) {
+            noteId = note.getId();
             binding.notesItemTitle.setText(note.getTitle());
             binding.notesItemCard.setOnClickListener(new View.OnClickListener() {
                 @Override
